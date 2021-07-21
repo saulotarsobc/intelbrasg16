@@ -85,7 +85,7 @@ exit
 exit
 ```
 
->Profile LINE
+>Profile LINE (para cada modelo)
 
 ```sh
 deploy profile line
