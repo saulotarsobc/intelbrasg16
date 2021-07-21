@@ -50,18 +50,29 @@ ont-find interface gpon all
 > Salvar as configurações
 
 ```sh
-copy running-config startup-config
-y
+# copy running-config startup-config
+# y
 ```
 
-> Apagar todas as configuracoes (padrão de fábrica)
+> Apagar todas as configurações (padrão de fábrica)
 
 ```sh
-copy running-config startup-config
-y
+# clear startup-config
+# y
 ```
 
 ## Referente as ONU's
+
+> Buscar ONU's não provisionadas
+
+```sh
+# todas as pons
+show ont-find list interface gpon all
+# apenas em uma pon
+show ont-find list interface gpon 0/1
+# expecificando o index da ont
+show ont-find list interface gpon 0/1 index 1
+```
 
 > Profile DBA
 
