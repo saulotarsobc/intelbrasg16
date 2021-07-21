@@ -124,7 +124,7 @@ exit
 exit
 
 deploy profile line
-aim name LINE-PON1-ONU-110R1
+aim name LINE-PON1-ONU-R1
 device type i40-100
 tcont 1 profile dba name DBA-DEFAULT
 gemport 1 tcont 1 vlan-profile name VLAN-PON1
@@ -140,8 +140,8 @@ exit
 
 ```sh
 deploy profile rule
-aim name ITBS-0ddf68dc
-permit sn string-hex ITBS-0ddf68dc line name LINE-PON1-ONU-110Gi
+aim name ITBS-6eeae83c
+permit sn string-hex ITBS-6eeae83c line name LINE-PON1-ONU-R1
 active
 exit
 exit
@@ -151,6 +151,6 @@ exit
 
 ```sh
 deploy profile rule
-delete aim name ITBS-0ddf68dc
+delete aim name ITBS-6eeae83c
 y
 ```
