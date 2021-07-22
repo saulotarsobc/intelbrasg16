@@ -61,6 +61,14 @@ ont-find interface gpon all
 # y
 ```
 
+## SNMP
+
+> Habilitando o SNMP Server
+
+```sh
+
+```
+
 ## Referente as ONU's
 
 > Buscar ONU's não provisionadas
