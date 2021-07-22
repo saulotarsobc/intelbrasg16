@@ -5,6 +5,7 @@
 > criar vlans (vlan 20 de gerenciamento)
 
 ```sh
+configure terminal
 interface range ethernet 1/1
 switchport mode trunk
 exit
@@ -15,6 +16,7 @@ exit
 > Interface de Uplink
 
 ```sh
+configure terminal
 interface ethernet 1/1
 switchport trunk allowed vlan 20-36
 ```
@@ -22,6 +24,7 @@ switchport trunk allowed vlan 20-36
 > Ip na vlan de gerencia
 
 ```sh
+configure terminal
 interface vlan-interface 20
 ip address 172.18.18.18 255.255.255.252
 exit
@@ -30,12 +33,14 @@ exit
 > Rota default
 
 ```sh
+configure terminal
 ip route 0.0.0.0 0.0.0.0 172.18.18.17
 ```
 
 > Habilitar SSH
 
 ```sh
+configure terminal
 ssh
 end
 crypto key generate rsa
@@ -44,21 +49,24 @@ crypto key generate rsa
 > Ativar descoberta automáticas das ONT's
 
 ```sh
+configure terminal
 ont-find interface gpon all
 ```
 
 > Salvar as configurações
 
 ```sh
-# copy running-config startup-config
-# y
+end
+copy running-config startup-config
+y
 ```
 
 > Apagar todas as configurações (padrão de fábrica)
 
 ```sh
-# clear startup-config
-# y
+end
+clear startup-config
+y
 ```
 
 ## SNMP
@@ -66,7 +74,9 @@ ont-find interface gpon all
 > Habilitando o SNMP Server
 
 ```sh
-
+configure terminal
+snmp-server enable
+snmp-server community <comunidade> ro permit
 ```
 
 ## Referente as ONU's
@@ -74,6 +84,7 @@ ont-find interface gpon all
 > Buscar ONU's não provisionadas
 
 ```sh
+configure terminal
 # todas as pons
 show ont-find list interface gpon all
 # apenas em uma pon
@@ -83,6 +94,10 @@ show ont-find list interface gpon 0/1 index 1
 ```
 
 > Profile DBA
+
+```sh
+configure terminal
+```
 
 ```sh
 deploy profile dba
