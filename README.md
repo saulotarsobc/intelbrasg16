@@ -93,11 +93,11 @@ show ont-find list interface gpon 0/1
 show ont-find list interface gpon 0/1 index 1
 ```
 
-> Profile DBA
-
 ```sh
 configure terminal
 ```
+
+> Profile DBA
 
 ```sh
 deploy profile dba
