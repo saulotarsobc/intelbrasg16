@@ -156,7 +156,7 @@ mapping 1 port eth 1 vlan 21 gemport 1
 flow 1 port eth 1 default vlan 21
 active
 exit
-exit    
+exit
 ```
 
 > Profile RULE (add onu)
