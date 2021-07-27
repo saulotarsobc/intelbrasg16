@@ -164,7 +164,7 @@ exit
 ```sh
 deploy profile rule
 aim name ITBS-6eeae83c
-permit sn string-hex ITBS-6eeae83c line name LINE-PON1-ONU-R1
+permit sn string-hex ITBS-6eeae83c line name LINE-PON1-ONU-R1 default line name LINE-PON1-ONU-R1
 active
 exit
 exit
