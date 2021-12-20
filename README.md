@@ -101,7 +101,7 @@ configure terminal
 
 ```sh
 deploy profile dba
-aim name DBA-DEFAULT
+aim name SEM-LIMITE
 type 4 max 1200000
 active
 exit
@@ -125,7 +125,7 @@ exit
 deploy profile line
 aim name LINE-PON1-ONU-110Gb
 device type i41-100
-tcont 1 profile dba name DBA-DEFAULT
+tcont 1 profile dba name SEM-LIMITE
 gemport 1 tcont 1 vlan-profile name VLAN-PON1
 mapping mode port-vlan
 mapping 1 port eth 1 vlan 21 gemport 1
@@ -137,7 +137,7 @@ exit
 deploy profile line
 aim name LINE-PON1-ONU-110Gi
 device type i30-100
-tcont 1 profile dba name DBA-DEFAULT
+tcont 1 profile dba name SEM-LIMITE
 gemport 1 tcont 1 vlan-profile name VLAN-PON1
 mapping mode port-vlan
 mapping 1 port eth 1 vlan 21 gemport 1
@@ -149,7 +149,7 @@ exit
 deploy profile line
 aim name LINE-PON1-ONU-R1
 device type i40-100
-tcont 1 profile dba name DBA-DEFAULT
+tcont 1 profile dba name SEM-LIMITE
 gemport 1 tcont 1 vlan-profile name VLAN-PON1
 mapping mode port-vlan
 mapping 1 port eth 1 vlan 21 gemport 1
@@ -176,4 +176,30 @@ exit
 deploy profile rule
 delete aim name ITBS-6eeae83c
 y
+```
+
+> Exibir configurações atuais
+
+```sh
+enable
+configure terminal
+show running-config
+```
+
+> Restaurar padrão de fábrica
+
+```sh
+#Limpar arquivo de configuração de inicialização
+clear startup-config
+#Reiniciar o sistema
+reboot
+```
+
+> Atualização de firmware
+
+```sh
+#Carregar o arquivo
+load application {tftp | ftp} {inet | inet6 } <server-ip> <file-name>
+#Reiniciar o sistema
+reboot
 ```
