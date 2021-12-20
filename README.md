@@ -9,16 +9,16 @@ configure terminal
 interface range ethernet 1/1
 switchport mode trunk
 exit
-vlan 20-36
+vlan 20
 exit
 ```
 
-> Interface de Uplink
+> Interface de Uplink de PONs - VLAN 21 A 36
 
 ```sh
 configure terminal
 interface ethernet 1/1
-switchport trunk allowed vlan 20-36
+switchport trunk allowed vlan 21-36
 ```
 
 > Ip na vlan de gerencia
