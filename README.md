@@ -163,6 +163,7 @@ exit
 
 ```sh
 deploy profile rule
+# nome do cliente ou mac
 aim name ITBS-6eeae83c
 permit sn string-hex ITBS-6eeae83c line name LINE-PON1-ONU-R1 default line name LINE-PON1-ONU-R1
 active
@@ -174,6 +175,7 @@ exit
 
 ```sh
 deploy profile rule
+# nome do cliente ou mac
 delete aim name ITBS-6eeae83c
 y
 ```
